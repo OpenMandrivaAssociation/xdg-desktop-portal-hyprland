@@ -1,11 +1,9 @@
-	
 %global sdbus_version 1.3.0
- 
+
 Name:           xdg-desktop-portal-hyprland
-Version:        1.2.4
+Version:        1
 Release:        %autorelease
 Summary:        xdg-desktop-portal backend for hyprland
- 
 # xdg-desktop-portal-hyprland: BSD-3-Clause
 # protocols/wlr-foreign-toplevel-management-unstable-v1.xml: HPND-sell-variant
 # sdbus-cpp: LGPL-2.1-or-later WITH Qt-LGPL-exception-1.1
@@ -17,24 +15,20 @@ License:        BSD-3-Clause AND HPND-sell-variant
 URL:            https://github.com/hyprwm/%{name}
 Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 Source1:        https://github.com/Kistler-Group/sdbus-cpp/archive/v%{sdbus_version}/sdbus-%{sdbus_version}.tar.gz
- 
-# https://fedoraproject.org/wiki/Changes/EncourageI686LeafRemoval
-ExcludeArch:    %{ix86}
+
  
 BuildRequires:  cmake
-BuildRequires:  gcc-c++
 BuildRequires:  meson
-BuildRequires:  systemd-rpm-macros
- 
+
 BuildRequires:  pkgconfig(gbm)
-BuildRequires:  pkgconfig(hyprland-protocols)
+# Need import
+#BuildRequires:  pkgconfig(hyprland-protocols)
 BuildRequires:  pkgconfig(libdrm)
 BuildRequires:  pkgconfig(libpipewire-0.3)
 BuildRequires:  pkgconfig(libsystemd)
 BuildRequires:  pkgconfig(Qt6Widgets)
-%if %{fedora} >= 40
-BuildRequires:  pkgconfig(sdbus-c++)
-%endif
+# Need import
+#BuildRequires:  pkgconfig(sdbus-c++)
 BuildRequires:  pkgconfig(systemd)
 BuildRequires:  pkgconfig(wayland-client)
 BuildRequires:  pkgconfig(wayland-protocols)
