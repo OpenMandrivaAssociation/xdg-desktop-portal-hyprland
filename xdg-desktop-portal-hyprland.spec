@@ -1,34 +1,21 @@
-%global sdbus_version 1.3.0
-
 Name:           xdg-desktop-portal-hyprland
-Version:        1
-Release:        %autorelease
+Version:        1.2.4
+Release:        1
 Summary:        xdg-desktop-portal backend for hyprland
-# xdg-desktop-portal-hyprland: BSD-3-Clause
-# protocols/wlr-foreign-toplevel-management-unstable-v1.xml: HPND-sell-variant
-# sdbus-cpp: LGPL-2.1-or-later WITH Qt-LGPL-exception-1.1
-%if %{fedora} < 40
-License:        BSD-3-Clause AND HPND-sell-variant AND LGPL-2.1-or-later WITH Qt-LGPL-exception-1.1
-%else
 License:        BSD-3-Clause AND HPND-sell-variant
-%endif
+Group:          Hyperland
 URL:            https://github.com/hyprwm/%{name}
 Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
-Source1:        https://github.com/Kistler-Group/sdbus-cpp/archive/v%{sdbus_version}/sdbus-%{sdbus_version}.tar.gz
 
- 
 BuildRequires:  cmake
 BuildRequires:  meson
-
 BuildRequires:  pkgconfig(gbm)
-# Need import
-#BuildRequires:  pkgconfig(hyprland-protocols)
+BuildRequires:  pkgconfig(hyprland-protocols)
 BuildRequires:  pkgconfig(libdrm)
 BuildRequires:  pkgconfig(libpipewire-0.3)
 BuildRequires:  pkgconfig(libsystemd)
 BuildRequires:  pkgconfig(Qt6Widgets)
-# Need import
-#BuildRequires:  pkgconfig(sdbus-c++)
+BuildRequires:  pkgconfig(sdbus-c++)
 BuildRequires:  pkgconfig(systemd)
 BuildRequires:  pkgconfig(wayland-client)
 BuildRequires:  pkgconfig(wayland-protocols)
@@ -46,33 +33,13 @@ Requires:       qt6-qtwayland
 Enhances:       hyprland
 Supplements:    hyprland
  
-%if %{fedora} < 40
-Provides:       bundled(sdbus-cpp) = %{sdbus_version}
-%endif
- 
 %description
 %{summary}.
  
- 
 %prep
-%autosetup
-%if %{fedora} < 40
-tar -xf %{SOURCE1} -C subprojects/sdbus-cpp --strip=1
-%endif
- 
+%autosetup -p1
  
 %build
-%if %{fedora} < 40
-pushd subprojects/sdbus-cpp
-%cmake -G Ninja \
-    -DCMAKE_INSTALL_PREFIX=%{_builddir}/sdbus \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DBUILD_SHARED_LIBS=OFF
-%cmake_build
-cmake --install %{_vpath_builddir}
-popd
-export PKG_CONFIG_PATH=%{_builddir}/sdbus/%{_lib}/pkgconfig
-%endif
 %meson
 %meson_build
  
@@ -84,7 +51,6 @@ export PKG_CONFIG_PATH=%{_builddir}/sdbus/%{_lib}/pkgconfig
  
 %preun
 %systemd_user_preun %{name}.service
- 
  
 %files
 %license LICENSE
