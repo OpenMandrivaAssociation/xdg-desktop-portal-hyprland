@@ -3,7 +3,7 @@ Version:        1.2.4
 Release:        1
 Summary:        xdg-desktop-portal backend for hyprland
 License:        BSD-3-Clause AND HPND-sell-variant
-Group:          Hyperland
+Group:          Hyprland
 URL:            https://github.com/hyprwm/%{name}
 Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 
