@@ -1,5 +1,5 @@
 Name:           xdg-desktop-portal-hyprland
-Version:        1.2.6
+Version:        1.3.0
 Release:        1
 Summary:        xdg-desktop-portal backend for hyprland
 License:        BSD-3-Clause AND HPND-sell-variant
@@ -11,6 +11,7 @@ BuildRequires:  cmake
 BuildRequires:  meson
 BuildRequires:  pkgconfig(gbm)
 BuildRequires:  pkgconfig(hyprland-protocols)
+BuildRequires:  pkgconfig(hyprlang)
 BuildRequires:  pkgconfig(libdrm)
 BuildRequires:  pkgconfig(libpipewire-0.3)
 BuildRequires:  pkgconfig(libsystemd)
