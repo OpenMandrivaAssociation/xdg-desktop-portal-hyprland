@@ -1,14 +1,14 @@
 Name:           xdg-desktop-portal-hyprland
-Version:        1.3.0
+Version:        1.3.1
 Release:        1
 Summary:        xdg-desktop-portal backend for hyprland
 License:        BSD-3-Clause AND HPND-sell-variant
 Group:          Hyprland
 URL:            https://github.com/hyprwm/%{name}
 Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
+Patch0:         fix-service-install.patch
 
 BuildRequires:  cmake
-BuildRequires:  meson
 BuildRequires:  pkgconfig(gbm)
 BuildRequires:  pkgconfig(hyprland-protocols)
 BuildRequires:  pkgconfig(hyprlang)
@@ -41,11 +41,11 @@ Supplements:    hyprland
 %autosetup -p1
  
 %build
-%meson
-%meson_build
+%cmake
+%make_build
  
 %install
-%meson_install
+%make_install -C build
  
 %post
 %systemd_user_post %{name}.service
