@@ -59,4 +59,4 @@ Supplements:    hyprland
 %{_libexecdir}/%{name}
 %{_datadir}/xdg-desktop-portal/portals/hyprland.portal
 %{_datadir}/dbus-1/services/org.freedesktop.impl.portal.desktop.hyprland.service
-%{_userunitdir}/%{name}.service
+#{_userunitdir}/%{name}.service
