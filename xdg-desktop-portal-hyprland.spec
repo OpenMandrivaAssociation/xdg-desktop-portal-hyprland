@@ -41,7 +41,7 @@ Supplements:    hyprland
  
 %build
 %cmake
-%make_build
+%make_build -C build
  
 %install
 %make_install
