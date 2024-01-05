@@ -41,10 +41,10 @@ Supplements:    hyprland
  
 %build
 %cmake
-%make_build -C build
+%make_build
  
 %install
-%make_install
+%make_install -C build
  
 %post
 %systemd_user_post %{name}.service
