@@ -6,7 +6,7 @@ License:        BSD-3-Clause AND HPND-sell-variant
 Group:          Hyprland
 URL:            https://github.com/hyprwm/%{name}
 Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
-Patch0:         fix-service-install.patch
+#Patch0:         fix-service-install.patch
 
 BuildRequires:  cmake
 BuildRequires:  pkgconfig(gbm)
