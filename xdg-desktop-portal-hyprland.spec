@@ -9,6 +9,7 @@ Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 #Patch0:         fix-service-install.patch
 
 BuildRequires:  cmake
+BuildRequires:  cmake(Qt6)
 BuildRequires:  pkgconfig(gbm)
 BuildRequires:  pkgconfig(hyprland-protocols)
 BuildRequires:  pkgconfig(hyprlang)
