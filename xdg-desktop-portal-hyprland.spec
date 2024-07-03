@@ -6,16 +6,17 @@ License:        BSD-3-Clause AND HPND-sell-variant
 Group:          Hyprland
 URL:            https://github.com/hyprwm/%{name}
 Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
-Patch0:         fix-service-install.patch
 Patch1:         https://github.com/hyprwm/xdg-desktop-portal-hyprland/commit/c5b30938710d6c599f3f5cd99a3ffac35381fb0f.patch
 
 BuildRequires:  cmake
+BuildRequires:  cmake(Qt6)
 BuildRequires:  pkgconfig(gbm)
 BuildRequires:  pkgconfig(hyprland-protocols)
 BuildRequires:  pkgconfig(hyprlang)
 BuildRequires:  pkgconfig(libdrm)
 BuildRequires:  pkgconfig(libpipewire-0.3)
 BuildRequires:  pkgconfig(libsystemd)
+BuildRequires:  pkgconfig(Qt6Core)
 BuildRequires:  pkgconfig(Qt6Widgets)
 BuildRequires:  pkgconfig(sdbus-c++)
 BuildRequires:  pkgconfig(systemd)
