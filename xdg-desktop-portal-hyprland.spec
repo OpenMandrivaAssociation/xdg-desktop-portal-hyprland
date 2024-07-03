@@ -6,7 +6,7 @@ License:        BSD-3-Clause AND HPND-sell-variant
 Group:          Hyprland
 URL:            https://github.com/hyprwm/%{name}
 Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
-#Patch0:         fix-service-install.patch
+Patch1:         https://github.com/hyprwm/xdg-desktop-portal-hyprland/commit/c5b30938710d6c599f3f5cd99a3ffac35381fb0f.patch
 
 BuildRequires:  cmake
 BuildRequires:  cmake(Qt6)
@@ -32,7 +32,7 @@ Requires:       xdg-desktop-portal
 # required for hyprland-share-picker
 Requires:       slurp
 Requires:       qt6-qtwayland
- 
+Recommends:     hyprpicker
 Enhances:       hyprland
 Supplements:    hyprland
  
