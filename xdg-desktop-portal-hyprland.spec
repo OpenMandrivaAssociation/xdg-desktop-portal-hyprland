@@ -1,5 +1,5 @@
 Name:           xdg-desktop-portal-hyprland
-Version:        1.3.3
+Version:        1.3.4
 Release:        1
 Summary:        xdg-desktop-portal backend for hyprland
 License:        BSD-3-Clause AND HPND-sell-variant
@@ -31,6 +31,8 @@ Requires:       xdg-desktop-portal
 # required for hyprland-share-picker
 Requires:       slurp
 Requires:       qt6-qtwayland
+Requires:       hyprwayland-scanner
+Requires:       %{_lib}hyprutils
 Recommends:     hyprpicker
 Enhances:       hyprland
 Supplements:    hyprland
