@@ -32,7 +32,7 @@ Requires:       xdg-desktop-portal
 Requires:       slurp
 Requires:       qt6-qtwayland
 Requires:       hyprwayland-scanner
-Requires:       %{_lib}hyprutils
+Requires:       hyprutils
 Recommends:     hyprpicker
 Enhances:       hyprland
 Supplements:    hyprland
