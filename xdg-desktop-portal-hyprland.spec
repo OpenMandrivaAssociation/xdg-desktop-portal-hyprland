@@ -6,7 +6,6 @@ License:        BSD-3-Clause AND HPND-sell-variant
 Group:          Hyprland
 URL:            https://github.com/hyprwm/%{name}
 Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
-Patch0:         https://github.com/hyprwm/xdg-desktop-portal-hyprland/commit/ac1b8c3067716d67cc9c0c184d5b15ac27fd945a.patch
 
 BuildRequires:  cmake
 BuildRequires:  cmake(Qt6)
